@@ -12,7 +12,7 @@
   localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
   translate: undefined,
   noticeOutdate: undefined,
-  highlight: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
   copy: {
     success: '复制成功',
     error: '复制错误',
@@ -52,7 +52,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-05-03 14:21:53'
+  postUpdate: '2023-05-03 14:28:05'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -166,56 +166,20 @@
 遍历集合中存储的信息,根据学生的学号删除学生xinx
 
 查找学生信息
-查找学生信息
-    查找全部
-    根据学号查找
+查找学生信息	查找全部	根据学号查找
 
 修改学生信息
 根据学号进行更改
 
-
 代码:
 ​	学生类(Student)
-package studentmassagesystem;
+package studentmassagesystem;import java.io.Serializable;/** * Description: * date: 2023/5/3 8:54 * @author fjp * @version 1.0 */public class Student implements Serializable &#123;    /**     * 学号     */    private String id;    /**     * 姓名      */    private String name;    /**     * 性别     */    private St ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/05/01/JAVA%E5%9F%BA%E7%A1%80/" title="JAVA基础">JAVA基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-01T12:08:37.000Z" title="发表于 2023-05-01 20:08:37">2023-05-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/java/">java</a></span></div><div class="content">JAVA基础一、准备阶段W1.JAVA的执行流程.Java文件（源文件）——&gt;javac编译——&gt;.class文件（字节码文件）——&gt;java运行——&gt;结果
 
-import java.io.Serializable;
+2.开发细节1.区分大小写2.Java方法是一条语句，以分号结束3.大括号成对出现4.一个Java文件中只能有一个public类。其它类个数不限。5.如果源文件包含一个public类，则文件名必须按照该类名命名。6.一个源文件中最多只能有一个public类，其他类个数不限，也可以将main方法写在非public类中，然后指定运行非public类，这样入口方法就是非public的main方法。
 
-/**
- * Description:
- * date: 2023/5/3 8:54
- * @author fjp
- * @version 1.0
- */
-public class Student implements Serializable &#123;
+3..命名规则规则1.有字母数字下划线组成2.数字不能开头3.不能使用关键字和保留字，但可以包含关键字和保留字4.Java中严格区分大小写，长度无限制5.标识符不能包含空格6.不能使用特殊符号,除$和_
 
-    /**
-     * 学号
-     */
-    private String id;
-    /**
-     * 姓名
-      */
-    private String name;
-    /**
- ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/05/01/JAVA%E5%9F%BA%E7%A1%80/" title="JAVA基础">JAVA基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-01T12:08:37.000Z" title="发表于 2023-05-01 20:08:37">2023-05-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/java/">java</a></span></div><div class="content">JAVA基础一、准备阶段W1.JAVA的执行流程.Java文件（源文件）——&gt;javac编译——&gt;.class文件（字节码文件）——&gt;java运行——&gt;结果
-
-2.开发细节1.区分大小写
-2.Java方法是一条语句，以分号结束
-3.大括号成对出现
-4.一个Java文件中只能有一个public类。其它类个数不限。
-5.如果源文件包含一个public类，则文件名必须按照该类名命名。
-6.一个源文件中最多只能有一个public类，其他类个数不限，也可以将main方法写在非public类中，然后指定运行非public类，这样入口方法就是非public的main方法。
-
-3..命名规则规则1.有字母数字下划线组成
-2.数字不能开头
-3.不能使用关键字和保留字，但可以包含关键字和保留字
-4.Java中严格区分大小写，长度无限制
-5.标识符不能包含空格
-6.不能使用特殊符号,除$和_
-
-规范1.包名，多单词组成时所有字母都小写。如aaa.bbb.ccc
-2.类名，接口名,注解名,枚举名:多单词组成时，所有单词首字母都大写。如：TalkBankGame
-3.变量名，方法名：多单 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/05/01/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="第一篇博客">第一篇博客</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-01T08:09:13.000Z" title="发表于 2023-05-01 16:09:13">2023-05-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%BB%98%E8%AE%A4/">默认</a></span></div><div class="content">hexo new “”
+规范1.包名，多单词组成时所有字母都小写。如aaa.bbb.ccc2.类名，接口名,注解名,枚举名:多单词组成时，所有单词首字母都大写。如：TalkBankGame3.变量名，方法名：多单词组成时，第一个单词首字 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/05/01/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="第一篇博客">第一篇博客</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-01T08:09:13.000Z" title="发表于 2023-05-01 16:09:13">2023-05-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%BB%98%E8%AE%A4/">默认</a></span></div><div class="content">hexo new “”
 hexo g 
 hexo d
 hexo s
@@ -231,7 +195,7 @@ hexo s
             </div>
             <ul class="card-category-list" id="aside-cat-list">
             <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/java/"><span class="card-category-list-name">java</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/java%E7%BB%83%E4%B9%A0/"><span class="card-category-list-name">java练习</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%BB%98%E8%AE%A4/"><span class="card-category-list-name">默认</span><span class="card-category-list-count">1</span></a></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 1.1em; color: #999">学生管理系统</a> <a href="/tags/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 1.1em; color: #999">java基础知识</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">3</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-05-03T06:21:53.066Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/70.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 冯家鹏</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">半糖版权所有</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 1.1em; color: #999">学生管理系统</a> <a href="/tags/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 1.1em; color: #999">java基础知识</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">3</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-05-03T06:28:05.099Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/70.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 冯家鹏</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">半糖版权所有</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
   init: (str) => {
     window.typed = new Typed('#subtitle', Object.assign({
       strings: str,

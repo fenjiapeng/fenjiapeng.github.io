@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>java基础练习--学生管理系统 | 半糖</title><meta name="author" content="冯家鹏"><meta name="copyright" content="冯家鹏"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="java基础学习结束,写一个学生信息管理系统,包括增加学生信息,删除学生信息,查找学生信息,更改学生信息.  增加学生信息 从键盘录入学生的基本信息,存入txt文件,达到持久化存储  删除学生信息 遍历集合中存储的信息,根据学生的学号删除学生xinx  查找学生信息 查找学生信息     查找全部     根据学号查找  修改学生信息 根据学号进行更改   代码: ​	学生类(Student) p">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>java基础练习--学生管理系统 | 半糖</title><meta name="author" content="冯家鹏"><meta name="copyright" content="冯家鹏"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="java基础学习结束,写一个学生信息管理系统,包括增加学生信息,删除学生信息,查找学生信息,更改学生信息.  增加学生信息 从键盘录入学生的基本信息,存入txt文件,达到持久化存储  删除学生信息 遍历集合中存储的信息,根据学生的学号删除学生xinx  查找学生信息 查找学生信息	查找全部	根据学号查找  修改学生信息 根据学号进行更改  代码: ​	学生类(Student) package st">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java基础练习--学生管理系统">
 <meta property="og:url" content="http://example.com/2023/05/03/java%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/index.html">
 <meta property="og:site_name" content="半糖">
-<meta property="og:description" content="java基础学习结束,写一个学生信息管理系统,包括增加学生信息,删除学生信息,查找学生信息,更改学生信息.  增加学生信息 从键盘录入学生的基本信息,存入txt文件,达到持久化存储  删除学生信息 遍历集合中存储的信息,根据学生的学号删除学生xinx  查找学生信息 查找学生信息     查找全部     根据学号查找  修改学生信息 根据学号进行更改   代码: ​	学生类(Student) p">
+<meta property="og:description" content="java基础学习结束,写一个学生信息管理系统,包括增加学生信息,删除学生信息,查找学生信息,更改学生信息.  增加学生信息 从键盘录入学生的基本信息,存入txt文件,达到持久化存储  删除学生信息 遍历集合中存储的信息,根据学生的学号删除学生xinx  查找学生信息 查找学生信息	查找全部	根据学号查找  修改学生信息 根据学号进行更改  代码: ​	学生类(Student) package st">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/toux.jpg">
 <meta property="article:published_time" content="2023-05-03T05:57:55.000Z">
@@ -17,7 +17,7 @@
   localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
   translate: undefined,
   noticeOutdate: undefined,
-  highlight: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
   copy: {
     success: '复制成功',
     error: '复制错误',
@@ -165,375 +165,27 @@
 </head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/toux.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tag/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/03.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="半糖"><span class="site-name">半糖</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tag/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">java基础练习--学生管理系统</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-03T05:57:55.000Z" title="发表于 2023-05-03 13:57:55">2023-05-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-03T06:06:55.367Z" title="更新于 2023-05-03 14:06:55">2023-05-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/java%E7%BB%83%E4%B9%A0/">java练习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="java基础练习--学生管理系统"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>java基础学习结束,写一个学生信息管理系统,包括增加学生信息,删除学生信息,查找学生信息,更改学生信息.</p>
 <blockquote>
 <p>增加学生信息</p>
-<pre><code>从键盘录入学生的基本信息,存入txt文件,达到持久化存储
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">从键盘录入学生的基本信息,存入txt文件,达到持久化存储</span><br></pre></td></tr></table></figure>
+
 <p>删除学生信息</p>
-<pre><code>遍历集合中存储的信息,根据学生的学号删除学生xinx
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">遍历集合中存储的信息,根据学生的学号删除学生xinx</span><br></pre></td></tr></table></figure>
+
 <p>查找学生信息</p>
-<pre><code>查找学生信息
-    查找全部
-    根据学号查找
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">查找学生信息</span><br><span class="line">	查找全部</span><br><span class="line">	根据学号查找</span><br></pre></td></tr></table></figure>
+
 <p>修改学生信息</p>
-<pre><code>根据学号进行更改
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">根据学号进行更改</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>代码:</p>
 <p>​	学生类(Student)</p>
-<pre><code class="java">package studentmassagesystem;
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> studentmassagesystem;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.Serializable;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Description:</span></span><br><span class="line"><span class="comment"> * date: 2023/5/3 8:54</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> fjp</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Student</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 学号</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> String id;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 姓名</span></span><br><span class="line"><span class="comment">      */</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 性别</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> String sex;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 电话</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> String phone;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 班级</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> String grade;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 学院</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> String collage;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Student</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Student</span><span class="params">(String id ,String name, String sex, String phone, String grade, String collage)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.sex = sex;</span><br><span class="line">        <span class="built_in">this</span>.phone = phone;</span><br><span class="line">        <span class="built_in">this</span>.grade = grade;</span><br><span class="line">        <span class="built_in">this</span>.collage = collage;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getSex</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> sex;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setSex</span><span class="params">(String sex)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.sex = sex;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getPhone</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> phone;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPhone</span><span class="params">(String phone)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.phone = phone;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getGrade</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> grade;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setGrade</span><span class="params">(String grade)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.grade = grade;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getCollage</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> collage;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setCollage</span><span class="params">(String collage)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.collage = collage;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getId</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setId</span><span class="params">(String id)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> id +<span class="string">&quot;\t    &quot;</span>+name+<span class="string">&quot;\t&quot;</span>+sex+<span class="string">&quot;\t    &quot;</span>+phone+<span class="string">&quot;\t    &quot;</span>+grade+<span class="string">&quot;\t    &quot;</span>+collage+<span class="string">&quot;\t&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-import java.io.Serializable;
-
-/**
- * Description:
- * date: 2023/5/3 8:54
- * @author fjp
- * @version 1.0
- */
-public class Student implements Serializable &#123;
-
-    /**
-     * 学号
-     */
-    private String id;
-    /**
-     * 姓名
-      */
-    private String name;
-    /**
-     * 性别
-     */
-    private String sex;
-    /**
-     * 电话
-     */
-    private String phone;
-    /**
-     * 班级
-     */
-    private String grade;
-    /**
-     * 学院
-     */
-    private String collage;
-
-    public Student() &#123;
-    &#125;
-
-    public Student(String id ,String name, String sex, String phone, String grade, String collage) &#123;
-        this.id = id;
-        this.name = name;
-        this.sex = sex;
-        this.phone = phone;
-        this.grade = grade;
-        this.collage = collage;
-    &#125;
-
-    public String getName() &#123;
-        return name;
-    &#125;
-
-    public void setName(String name) &#123;
-        this.name = name;
-    &#125;
-
-    public String getSex() &#123;
-        return sex;
-    &#125;
-
-    public void setSex(String sex) &#123;
-        this.sex = sex;
-    &#125;
-
-    public String getPhone() &#123;
-        return phone;
-    &#125;
-
-    public void setPhone(String phone) &#123;
-        this.phone = phone;
-    &#125;
-
-    public String getGrade() &#123;
-        return grade;
-    &#125;
-
-    public void setGrade(String grade) &#123;
-        this.grade = grade;
-    &#125;
-
-    public String getCollage() &#123;
-        return collage;
-    &#125;
-
-    public void setCollage(String collage) &#123;
-        this.collage = collage;
-    &#125;
-
-    public String getId() &#123;
-        return id;
-    &#125;
-
-    public void setId(String id) &#123;
-        this.id = id;
-    &#125;
-
-    @Override
-    public String toString() &#123;
-        return id +&quot;\t    &quot;+name+&quot;\t&quot;+sex+&quot;\t    &quot;+phone+&quot;\t    &quot;+grade+&quot;\t    &quot;+collage+&quot;\t&quot;;
-    &#125;
-&#125;
-</code></pre>
 <p>工具类(实现具体的增删查改,创建输入输出流)</p>
-<pre><code class="java">package studentmassagesystem;
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> studentmassagesystem;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Description:</span></span><br><span class="line"><span class="comment"> * date: 2023/5/3 9:01</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> fjp</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * 学生管理系统的工具类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StudentUtil</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ArrayList&lt;Student&gt; list;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 创建一个输入流读取文件中的学生信息,完成持久化存储</span></span><br><span class="line"><span class="comment">     * 添加学生信息,存储到文件中</span></span><br><span class="line"><span class="comment">     * 静态代码块只执行一次</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//创建一个文件字节输入流,将student.txt的内容读取到程序,进行操作</span></span><br><span class="line">            <span class="type">FileInputStream</span> <span class="variable">fileInputStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;student.txt&quot;</span>);</span><br><span class="line">            <span class="comment">//将创建的输入流,转为对象输入流,这里要对Student进行操作</span></span><br><span class="line">            <span class="type">ObjectInputStream</span> <span class="variable">objectInputStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectInputStream</span>(fileInputStream);</span><br><span class="line">                <span class="comment">//读取对象</span></span><br><span class="line">                <span class="type">Object</span> <span class="variable">object</span> <span class="operator">=</span> objectInputStream.readObject();</span><br><span class="line">                <span class="comment">//将读取到的对象赋值给Arraylist,这里是将内存地址给了list</span></span><br><span class="line">                list = (ArrayList&lt;Student&gt;) object;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="comment">//list指向新的引用</span></span><br><span class="line">            list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">addMessage</span><span class="params">()</span> &#123;</span><br><span class="line">       keyBoard();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            writeFile();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;添加成功!&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据学号删除学生信息</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">deleteMessage</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入要删除的学生学号:&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">id</span> <span class="operator">=</span> scanner.next();</span><br><span class="line">        <span class="keyword">for</span> (Student student : list) &#123;</span><br><span class="line">            <span class="keyword">if</span> (student.getId().equals(id))&#123;</span><br><span class="line">                list.remove(student);</span><br><span class="line">                System.out.println(<span class="string">&quot;删除成功&quot;</span>);</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    writeFile();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">&quot;未找到学号为&quot;</span>+id+<span class="string">&quot;的学生&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 查找所有学生信息</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">showMessage</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;学号\t&quot;</span>+<span class="string">&quot;姓名\t&quot;</span> +<span class="string">&quot;性别\t&quot;</span>+<span class="string">&quot;电话\t&quot;</span>+<span class="string">&quot;班级\t&quot;</span>+<span class="string">&quot;学院\t&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (Student student : list) &#123;</span><br><span class="line">            System.out.println(student);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">showIdMessage</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入要查找的学生学号:&quot;</span>);</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        <span class="type">String</span> <span class="variable">id</span> <span class="operator">=</span> scanner.next();</span><br><span class="line">        <span class="keyword">for</span> (Student student : list) &#123;</span><br><span class="line">            <span class="keyword">if</span> (student.getId().equals(id))&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;学号\t&quot;</span>+<span class="string">&quot;姓名\t&quot;</span> +<span class="string">&quot;性别\t&quot;</span>+<span class="string">&quot;电话\t&quot;</span>+<span class="string">&quot;班级\t&quot;</span>+<span class="string">&quot;学院\t&quot;</span>);</span><br><span class="line">                System.out.println(student);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">&quot;未找到学号为&quot;</span>+id+<span class="string">&quot;的学生&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据学号修改学信息</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span>  <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">modifyMessage</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入要修改的学生学号:&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">id</span> <span class="operator">=</span> scanner.next();</span><br><span class="line">        <span class="keyword">for</span> (Student student : list) &#123;</span><br><span class="line">            <span class="keyword">if</span> (student.getId().equals(id))&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;输入修改后的内容:&quot;</span>);</span><br><span class="line">                System.out.println(<span class="string">&quot;姓名:&quot;</span>);</span><br><span class="line">                <span class="type">String</span> <span class="variable">newName</span> <span class="operator">=</span> scanner.next();</span><br><span class="line">                System.out.println(<span class="string">&quot;性别:&quot;</span>);</span><br><span class="line">                <span class="type">String</span> <span class="variable">newSex</span> <span class="operator">=</span> scanner.next();</span><br><span class="line">                System.out.println(<span class="string">&quot;电话:&quot;</span>);</span><br><span class="line">                <span class="type">String</span> <span class="variable">newPhone</span> <span class="operator">=</span> scanner.next();</span><br><span class="line">                System.out.println(<span class="string">&quot;班级:&quot;</span>);</span><br><span class="line">                <span class="type">String</span> <span class="variable">newGrade</span> <span class="operator">=</span> scanner.next();</span><br><span class="line">                System.out.println(<span class="string">&quot;学院:&quot;</span>);</span><br><span class="line">                <span class="type">String</span> <span class="variable">newCollage</span> <span class="operator">=</span> scanner.next();</span><br><span class="line">                student.setName(newName);</span><br><span class="line">                student.setSex(newSex);</span><br><span class="line">                student.setPhone(newPhone);</span><br><span class="line">                student.setGrade(newGrade);</span><br><span class="line">                student.setCollage(newCollage);</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    writeFile();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println(<span class="string">&quot;修改成功&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            System.out.println(<span class="string">&quot;未找到学号为&quot;</span>+id+<span class="string">&quot;的学生&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 键盘输入的方法,从键盘录入学生信息</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">keyBoard</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入学生学号:&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">id</span> <span class="operator">=</span> scanner.next();</span><br><span class="line">        <span class="comment">//判断是否存在</span></span><br><span class="line">        <span class="keyword">for</span> (Student student : list) &#123;</span><br><span class="line">            <span class="keyword">if</span> (student.getId().equals(id))&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;该学生已存在,请重新输入&quot;</span>);</span><br><span class="line">                keyBoard();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入学生姓名:&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> scanner.next();</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入性别:&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">sex</span> <span class="operator">=</span> scanner.next();</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入联系方式:&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">phone</span> <span class="operator">=</span> scanner.next();</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入班级:&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">grade</span> <span class="operator">=</span> scanner.next();</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入学院:&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">collage</span> <span class="operator">=</span> scanner.next();</span><br><span class="line">        <span class="type">Student</span> <span class="variable">student1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>();</span><br><span class="line">        student1.setId(id);</span><br><span class="line">        student1.setName(name);</span><br><span class="line">        student1.setSex(sex);</span><br><span class="line">        student1.setPhone(phone);</span><br><span class="line">        student1.setGrade(grade);</span><br><span class="line">        student1.setCollage(collage);</span><br><span class="line">        list.add(student1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将list写入文本文件中</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">synchronized</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">writeFile</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="comment">//创建文件输出流,对象输出流</span></span><br><span class="line">        <span class="type">FileOutputStream</span> <span class="variable">fileOutputStream</span> <span class="operator">=</span><span class="literal">null</span>;</span><br><span class="line">        <span class="type">ObjectOutputStream</span> <span class="variable">objectOutputStream</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="comment">//将内容写入到txt文件</span></span><br><span class="line">        fileOutputStream = <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;student.txt&quot;</span>);</span><br><span class="line">        <span class="comment">//文件输出流转对象输出流</span></span><br><span class="line">        objectOutputStream = <span class="keyword">new</span> <span class="title class_">ObjectOutputStream</span>(fileOutputStream);</span><br><span class="line">        <span class="comment">//将list写入文件</span></span><br><span class="line">        objectOutputStream.writeObject(list);</span><br><span class="line">        <span class="comment">//冲刷</span></span><br><span class="line">        objectOutputStream.flush();</span><br><span class="line">        <span class="comment">//关闭资源</span></span><br><span class="line">        objectOutputStream.close();</span><br><span class="line">        fileOutputStream.close();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Scanner;
-
-/**
- * Description:
- * date: 2023/5/3 9:01
- * @author fjp
- * @version 1.0
- * 学生管理系统的工具类
- */
-public class StudentUtil &#123;
-    private static ArrayList&lt;Student&gt; list;
-
-    /**
-     * 创建一个输入流读取文件中的学生信息,完成持久化存储
-     * 添加学生信息,存储到文件中
-     * 静态代码块只执行一次
-     */
-    static &#123;
-        try &#123;
-            //创建一个文件字节输入流,将student.txt的内容读取到程序,进行操作
-            FileInputStream fileInputStream = new FileInputStream(&quot;student.txt&quot;);
-            //将创建的输入流,转为对象输入流,这里要对Student进行操作
-            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-                //读取对象
-                Object object = objectInputStream.readObject();
-                //将读取到的对象赋值给Arraylist,这里是将内存地址给了list
-                list = (ArrayList&lt;Student&gt;) object;
-        &#125; catch (Exception e) &#123;
-            //list指向新的引用
-            list = new ArrayList&lt;&gt;();
-        &#125;
-
-    &#125;
-
-    public static void addMessage() &#123;
-       keyBoard();
-
-        try &#123;
-            writeFile();
-        &#125; catch (IOException e) &#123;
-            e.printStackTrace();
-        &#125;
-        System.out.println(&quot;添加成功!&quot;);
-
-    &#125;
-
-    /**
-     * 根据学号删除学生信息
-     */
-    public static void deleteMessage()&#123;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(&quot;请输入要删除的学生学号:&quot;);
-        String id = scanner.next();
-        for (Student student : list) &#123;
-            if (student.getId().equals(id))&#123;
-                list.remove(student);
-                System.out.println(&quot;删除成功&quot;);
-                try &#123;
-                    writeFile();
-                &#125; catch (IOException e) &#123;
-                    e.printStackTrace();
-                &#125;
-                return;
-            &#125;
-            System.out.println(&quot;未找到学号为&quot;+id+&quot;的学生&quot;);
-        &#125;
-
-    &#125;
-
-    /**
-     * 查找所有学生信息
-     */
-    public static void showMessage()&#123;
-        System.out.println(&quot;学号\t&quot;+&quot;姓名\t&quot; +&quot;性别\t&quot;+&quot;电话\t&quot;+&quot;班级\t&quot;+&quot;学院\t&quot;);
-        for (Student student : list) &#123;
-            System.out.println(student);
-        &#125;
-    &#125;
-    public static void showIdMessage()&#123;
-        System.out.println(&quot;请输入要查找的学生学号:&quot;);
-        Scanner scanner = new Scanner(System.in);
-        String id = scanner.next();
-        for (Student student : list) &#123;
-            if (student.getId().equals(id))&#123;
-                System.out.println(&quot;学号\t&quot;+&quot;姓名\t&quot; +&quot;性别\t&quot;+&quot;电话\t&quot;+&quot;班级\t&quot;+&quot;学院\t&quot;);
-                System.out.println(student);
-                break;
-            &#125;
-            System.out.println(&quot;未找到学号为&quot;+id+&quot;的学生&quot;);
-        &#125;
-
-    &#125;
-    /**
-     * 根据学号修改学信息
-     */
-    public  static void modifyMessage()&#123;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(&quot;请输入要修改的学生学号:&quot;);
-        String id = scanner.next();
-        for (Student student : list) &#123;
-            if (student.getId().equals(id))&#123;
-                System.out.println(&quot;输入修改后的内容:&quot;);
-                System.out.println(&quot;姓名:&quot;);
-                String newName = scanner.next();
-                System.out.println(&quot;性别:&quot;);
-                String newSex = scanner.next();
-                System.out.println(&quot;电话:&quot;);
-                String newPhone = scanner.next();
-                System.out.println(&quot;班级:&quot;);
-                String newGrade = scanner.next();
-                System.out.println(&quot;学院:&quot;);
-                String newCollage = scanner.next();
-                student.setName(newName);
-                student.setSex(newSex);
-                student.setPhone(newPhone);
-                student.setGrade(newGrade);
-                student.setCollage(newCollage);
-                try &#123;
-                    writeFile();
-                &#125; catch (IOException e) &#123;
-                    e.printStackTrace();
-                &#125;
-                System.out.println(&quot;修改成功&quot;);
-                return;
-            &#125;
-
-            System.out.println(&quot;未找到学号为&quot;+id+&quot;的学生&quot;);
-        &#125;
-    &#125;
-    /**
-     * 键盘输入的方法,从键盘录入学生信息
-     */
-    public static void keyBoard()&#123;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(&quot;请输入学生学号:&quot;);
-        String id = scanner.next();
-        //判断是否存在
-        for (Student student : list) &#123;
-            if (student.getId().equals(id))&#123;
-                System.out.println(&quot;该学生已存在,请重新输入&quot;);
-                keyBoard();
-            &#125;
-        &#125;
-        System.out.println(&quot;请输入学生姓名:&quot;);
-        String name = scanner.next();
-        System.out.println(&quot;请输入性别:&quot;);
-        String sex = scanner.next();
-        System.out.println(&quot;请输入联系方式:&quot;);
-        String phone = scanner.next();
-        System.out.println(&quot;请输入班级:&quot;);
-        String grade = scanner.next();
-        System.out.println(&quot;请输入学院:&quot;);
-        String collage = scanner.next();
-        Student student1 = new Student();
-        student1.setId(id);
-        student1.setName(name);
-        student1.setSex(sex);
-        student1.setPhone(phone);
-        student1.setGrade(grade);
-        student1.setCollage(collage);
-        list.add(student1);
-    &#125;
-
-
-    /**
-     * 将list写入文本文件中
-     * @throws IOException
-     */
-    private synchronized static void writeFile() throws IOException &#123;
-        //创建文件输出流,对象输出流
-        FileOutputStream fileOutputStream =null;
-        ObjectOutputStream objectOutputStream = null;
-        //将内容写入到txt文件
-        fileOutputStream = new FileOutputStream(&quot;student.txt&quot;);
-        //文件输出流转对象输出流
-        objectOutputStream = new ObjectOutputStream(fileOutputStream);
-        //将list写入文件
-        objectOutputStream.writeObject(list);
-        //冲刷
-        objectOutputStream.flush();
-        //关闭资源
-        objectOutputStream.close();
-        fileOutputStream.close();
-&#125;
-&#125;
-</code></pre>
 <p>启动类(Application)</p>
-<pre><code class="java">package studentmassagesystem;
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> studentmassagesystem;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.sun.org.apache.bcel.internal.generic.BREAKPOINT;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Description:</span></span><br><span class="line"><span class="comment"> * date: 2023/5/3 10:26</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> fjp</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@SuppressWarnings(&quot;all&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Application</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            System.out.print(<span class="string">&quot;------------------------------------------------------------------\n&quot;</span>);</span><br><span class="line">            System.out.print(<span class="string">&quot;|                 xxxxxx学生管理系统                                |\n&quot;</span>);</span><br><span class="line">            System.out.print(<span class="string">&quot;| 1.增加学生    2.删除学生   3.查找学生信息   4.修改学生信息   5.退出 |\n&quot;</span>);</span><br><span class="line">            System.out.print(<span class="string">&quot;-------------------------------------------------------------------\n&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;请输入要执行的操作(eg:1/2/3/4/5):&quot;</span>);</span><br><span class="line">            <span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">            <span class="type">int</span> <span class="variable">tag</span> <span class="operator">=</span> scanner.nextInt();</span><br><span class="line">            <span class="keyword">switch</span> (tag)&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                    StudentUtil.addMessage();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                    StudentUtil.deleteMessage();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                    <span class="type">boolean</span> <span class="variable">tag1</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">while</span> (tag1)&#123;</span><br><span class="line">                        System.out.println(<span class="string">&quot;1.查找全部学生信息   2.根据学号查找  3.返回上一级&quot;</span>);</span><br><span class="line">                        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> scanner.nextInt();</span><br><span class="line">                        <span class="keyword">if</span> (i==<span class="number">1</span>)&#123;</span><br><span class="line">                            StudentUtil.showMessage();</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">if</span> (i==<span class="number">2</span>)&#123;</span><br><span class="line">                            StudentUtil.showIdMessage();</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">if</span> (i==<span class="number">3</span>)&#123;</span><br><span class="line">                            tag1=<span class="literal">false</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                    StudentUtil.modifyMessage();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">                    <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-import com.sun.org.apache.bcel.internal.generic.BREAKPOINT;
-
-import java.util.Scanner;
-
-/**
- * Description:
- * date: 2023/5/3 10:26
- *
- * @author fjp
- * @version 1.0
- */
-@SuppressWarnings(&quot;all&quot;)
-public class Application &#123;
-    public static void main(String[] args) &#123;
-        while(true)&#123;
-            System.out.print(&quot;------------------------------------------------------------------\n&quot;);
-            System.out.print(&quot;|                 xxxxxx学生管理系统                                |\n&quot;);
-            System.out.print(&quot;| 1.增加学生    2.删除学生   3.查找学生信息   4.修改学生信息   5.退出 |\n&quot;);
-            System.out.print(&quot;-------------------------------------------------------------------\n&quot;);
-            System.out.println(&quot;请输入要执行的操作(eg:1/2/3/4/5):&quot;);
-            Scanner scanner = new Scanner(System.in);
-            int tag = scanner.nextInt();
-            switch (tag)&#123;
-                case 1:
-                    StudentUtil.addMessage();
-                    break;
-                case 2:
-                    StudentUtil.deleteMessage();
-                    break;
-                case 3:
-                    boolean tag1 = true;
-                    while (tag1)&#123;
-                        System.out.println(&quot;1.查找全部学生信息   2.根据学号查找  3.返回上一级&quot;);
-                        int i = scanner.nextInt();
-                        if (i==1)&#123;
-                            StudentUtil.showMessage();
-                        &#125;
-                        if (i==2)&#123;
-                            StudentUtil.showIdMessage();
-                        &#125;
-                        if (i==3)&#123;
-                            tag1=false;
-                        &#125;
-                    &#125;
-                    break;
-                case 4:
-                    StudentUtil.modifyMessage();
-                    break;
-                case 5:
-                    return;
-            &#125;
-        &#125;
-
-    &#125;
-&#125;
-</code></pre>
 </article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">冯家鹏</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/05/03/java%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">http://example.com/2023/05/03/java基础练习-学生管理系统/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://github.com/fenjiapeng/fjp.github.io" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">半糖</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">学生管理系统</a></div><div class="post_share"><div class="social-share" data-image="/img/toux.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/05/01/JAVA%E5%9F%BA%E7%A1%80/" title="JAVA基础"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">JAVA基础</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/toux.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">冯家鹏</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/fenjiapeng/fjp.github.io"><i class="fab fa-github"></i><span>关注</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到半糖的博客,地址"fenjiapeng.github.io"</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/03/java%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" title="java基础练习--学生管理系统">java基础练习--学生管理系统</a><time datetime="2023-05-03T05:57:55.000Z" title="发表于 2023-05-03 13:57:55">2023-05-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/01/JAVA%E5%9F%BA%E7%A1%80/" title="JAVA基础">JAVA基础</a><time datetime="2023-05-01T12:08:37.000Z" title="发表于 2023-05-01 20:08:37">2023-05-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/01/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="第一篇博客">第一篇博客</a><time datetime="2023-05-01T08:09:13.000Z" title="发表于 2023-05-01 16:09:13">2023-05-01</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/03.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 冯家鹏</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">半糖版权所有</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadGitalk () {
   function initGitalk () {
     var gitalk = new Gitalk(Object.assign({
