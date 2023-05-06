@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>IO</title>
+      <link href="/2023/05/05/IO/"/>
+      <url>/2023/05/05/IO/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一、List"><a href="#一、List" class="headerlink" title="一、List"></a>一、List</h1><h2 id="1、ArrayList"><a href="#1、ArrayList" class="headerlink" title="1、ArrayList"></a>1、ArrayList</h2><h3 id="1-底层操作机制"><a href="#1-底层操作机制" class="headerlink" title="1.底层操作机制"></a>1.底层操作机制</h3><blockquote><ol><li>ArrayList中维护了一个Object类型的数组elementData.transient Object[] elementData;</li><li>当创建ArrayList对象时,如果使用的是无参构造器,则初始elementData容量为0,第一次添加,则扩容elementData为10,如果需要再次扩容,则扩容elementData为1.5倍.</li><li>如果使用的是指定大小的构造器,则初始elementData容量为指定大小,如果需要扩容,则直接扩容elementData为1.5倍</li></ol></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> java强化 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> io </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>java基础练习--图书管理系统</title>
       <link href="/2023/05/03/java%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
       <url>/2023/05/03/java%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0-%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>

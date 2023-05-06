@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-05-04T01:35:21.237Z</updated>
+  <updated>2023-05-06T13:25:47.416Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IO</title>
+    <link href="http://example.com/2023/05/05/IO/"/>
+    <id>http://example.com/2023/05/05/IO/</id>
+    <published>2023-05-05T12:33:38.000Z</published>
+    <updated>2023-05-06T13:25:47.416Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、List"><a href="#一、List" class="headerlink" title="一、List"></a>一、List</h1><h2 id="1、ArrayList"><a href="#1、ArrayList" class="headerlink" title="1、ArrayList"></a>1、ArrayList</h2><h3 id="1-底层操作机制"><a href="#1-底层操作机制" class="headerlink" title="1.底层操作机制"></a>1.底层操作机制</h3><blockquote><ol><li>ArrayList中维护了一个Object类型的数组elementData.transient Object[] elementData;</li><li>当创建ArrayList对象时,如果使用的是无参构造器,则初始elementData容量为0,第一次添加,则扩容elementData为10,如果需要再次扩容,则扩容elementData为1.5倍.</li><li>如果使用的是指定大小的构造器,则初始elementData容量为指定大小,如果需要扩容,则直接扩容elementData为1.5倍</li></ol></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;一、List&quot;&gt;&lt;a href=&quot;#一、List&quot; class=&quot;headerlink&quot; title=&quot;一、List&quot;&gt;&lt;/a&gt;一、List&lt;/h1&gt;&lt;h2 id=&quot;1、ArrayList&quot;&gt;&lt;a href=&quot;#1、ArrayList&quot; class=&quot;header</summary>
+      
+    
+    
+    
+    <category term="java强化" scheme="http://example.com/categories/java%E5%BC%BA%E5%8C%96/"/>
+    
+    
+    <category term="io" scheme="http://example.com/tags/io/"/>
+    
+  </entry>
   
   <entry>
     <title>java基础练习--图书管理系统</title>
